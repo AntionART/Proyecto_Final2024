@@ -44,7 +44,11 @@ async function crearForo(event) {
         });
 
         if (!response.ok) throw new Error('Error al crear el foro');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
         form.reset();
         fetchForos(); // Actualiza la lista de foros
     } catch (error) {
@@ -76,11 +80,16 @@ async function fetchGastos() {
             `;
             gastosContainer.appendChild(gastoDiv);
 
+<<<<<<< HEAD
+=======
+            // Sumar al total gastado
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
             totalGastado += parseFloat(gasto.totalGastado);
         });
 
         totalGastosElement.innerText = `Total Gastado: $${totalGastado.toFixed(2)}`;
 
+<<<<<<< HEAD
         actualizarGrafica(gastos); // Actualizar gráfica con los gastos
     } catch (error) {
         console.error(error);
@@ -115,22 +124,47 @@ async function agregarGasto(event) {
 }
 
 // Eliminar un gasto
+=======
+        // Llamamos a la función para actualizar la gráfica
+        actualizarGrafica(gastos);
+    } catch (error) {
+        console.error(error);
+        alert('No se pudieron cargar los gastos.');
+    }
+}
+
+// Función para eliminar gasto
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
 async function eliminarGasto(id) {
     try {
         const response = await fetch(`http://localhost:5000/api/gastos/${id}`, {
             method: 'DELETE',
         });
 
+<<<<<<< HEAD
         if (!response.ok) throw new Error('Error al eliminar el gasto');
+=======
+        if (!response.ok) {
+            throw new Error('Error al eliminar el gasto');
+        }
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
 
         fetchGastos(); // Vuelve a cargar los gastos después de eliminar
     } catch (error) {
         console.error(error);
+<<<<<<< HEAD
         alert('No se pudo eliminar el gasto.');
     }
 }
 
 // Agregar un nuevo comentario
+=======
+        alert('No se pudo eliminar el gasto.'); // Alerta de error
+    }
+}
+
+// Función para agregar comentario
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
 async function agregarComentario(event) {
     event.preventDefault();
     const form = event.target;
@@ -148,7 +182,11 @@ async function agregarComentario(event) {
         });
 
         if (!response.ok) throw new Error('Error al agregar el comentario');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
         form.reset();
         fetchComentarios(); // Actualiza la lista de comentarios
     } catch (error) {
@@ -172,7 +210,10 @@ async function fetchComentarios() {
             comentarioDiv.innerHTML = `
                 <strong>${comentario.usuario}</strong> (${comentario.correo}):
                 <p>${comentario.mensaje}</p>
+<<<<<<< HEAD
                 <em>${new Date(comentario.fecha).toLocaleString()}</em>
+=======
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
             `;
             comentariosContainer.appendChild(comentarioDiv);
         });
@@ -182,6 +223,7 @@ async function fetchComentarios() {
     }
 }
 
+<<<<<<< HEAD
 // Actualizar gráfica de gastos
 function actualizarGrafica(gastos) {
     const ctx = document.getElementById('gastosChart').getContext('2d');
@@ -304,6 +346,27 @@ function actualizarGrafica(gastos) {
 }
 
 
+=======
+// Funciones para exportar a PDF y Excel
+function exportToPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text("Foros de Discusión", 20, 20);
+    const forosContainer = document.getElementById('foros');
+    doc.text(forosContainer.innerText, 20, 30);
+
+    doc.save('foros.pdf');
+}
+
+function exportToExcel() {
+    const ws = XLSX.utils.table_to_sheet(document.getElementById('gastosTabla'));
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Gastos');
+    XLSX.writeFile(wb, 'gastos.xlsx');
+}
+
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
 // Configuración de gráfica
 function actualizarGrafica(gastos) {
     const ctx = document.getElementById('gastosChart').getContext('2d');
@@ -335,4 +398,8 @@ function actualizarGrafica(gastos) {
 // Llamar a las funciones para cargar los datos inicialmente
 fetchForos();
 fetchGastos();
+<<<<<<< HEAD
 fetchComentarios();
+=======
+fetchComentarios();
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32

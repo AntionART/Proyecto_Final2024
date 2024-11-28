@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+=======
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
     <title>Proyecto Módulos</title>
 </head>
 <body>
@@ -23,6 +26,7 @@
         </form>
 
         <h1>Gastos</h1>
+<<<<<<< HEAD
         <table id="gastosTabla">
             <thead>
                 <tr>
@@ -31,11 +35,22 @@
                     <th>Cantidad</th>
                     <th>Total Gastado</th>
                     <th>Acciones</th>
+=======
+        <table id="gastosTabla" class="box">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
                 </tr>
             </thead>
             <tbody id="gastosLista"></tbody>
         </table>
         <p id="totalGastos"></p>
+<<<<<<< HEAD
         
 
         <form id="gastosForm" onsubmit="return agregarGasto(event)" class="box">
@@ -45,11 +60,21 @@
             <input type="number" name="totalGastado" placeholder="Total gastado" required />
             <button type="submit">Agregar Gasto</button>
         </form>
+=======
+
+        <!-- Gráfico de gastos -->
+        <canvas id="gastosChart" width="400" height="200"></canvas>
+        
+        <h2>Exportar Datos</h2>
+        <button onclick="exportToPDF()">Exportar a PDF</button>
+        <button onclick="exportToExcel()">Exportar a Excel</button>
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
 
         <h1>Comentarios</h1>
         <div id="comentarios" class="box"></div>
 
         <form id="comentariosForm" onsubmit="return agregarComentario(event)" class="box">
+<<<<<<< HEAD
             <input type="text" name="usuario" placeholder="Usuario" required />
             <input type="email" name="correo" placeholder="Correo" required />
             <textarea name="mensaje" placeholder="Comentario" required></textarea>
@@ -69,6 +94,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+=======
+            <h2>Agregar Comentario</h2>
+            <input type="text" name="usuario" placeholder="Usuario" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Agregar Comentario</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+>>>>>>> 4cc3d1980dc85c1fbd02ab548ad5203d02207e32
     <script src="js/main.js"></script>
 </body>
 </html>
