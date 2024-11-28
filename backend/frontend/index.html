@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Proyecto Módulos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Foros de Discusión</h1>
+        <div id="foros" class="box"></div>
+        
+        <form id="foroForm" onsubmit="return crearForo(event)" class="box">
+            <h2>Crear Nuevo Foro</h2>
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <input type="text" name="tematica" placeholder="Temática" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <input type="text" name="imagenURL" placeholder="URL de Imagen" />
+            <button type="submit">Crear Foro</button>
+        </form>
+
+        <h1>Gastos</h1>
+        <table id="gastosTabla" class="box">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="gastosLista"></tbody>
+        </table>
+        <p id="totalGastos"></p>
+
+        <!-- Gráfico de gastos -->
+        <canvas id="gastosChart" width="400" height="200"></canvas>
+        
+        <h2>Exportar Datos</h2>
+        <button onclick="exportToPDF()">Exportar a PDF</button>
+        <button onclick="exportToExcel()">Exportar a Excel</button>
+
+        <h1>Comentarios</h1>
+        <div id="comentarios" class="box"></div>
+
+        <form id="comentariosForm" onsubmit="return agregarComentario(event)" class="box">
+            <h2>Agregar Comentario</h2>
+            <input type="text" name="usuario" placeholder="Usuario" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Agregar Comentario</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

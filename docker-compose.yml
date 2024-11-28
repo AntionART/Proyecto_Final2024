@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: mi-aplicacion
+    ports:
+      - "5000:5000"  # Expone el puerto 5000 para acceder a la aplicación
+    depends_on:
+      - db  # Asegura que el contenedor de MongoDB se inicie primero
+    networks:
+      - app-network
+    restart: always
+
+  db:
+    image: mongo:latest  # Usa la última imagen de MongoDB
+    container_name: db
+    volumes:
+      - db-data:/data/db  # Persistencia de datos
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
