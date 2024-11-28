@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Proyecto Módulos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Foros de Discusión</h1>
+        <div id="foros" class="box"></div>
+        
+        <form id="foroForm" onsubmit="return crearForo(event)" class="box">
+            <h2>Crear Nuevo Foro</h2>
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <input type="text" name="tematica" placeholder="Temática" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <input type="text" name="imagenURL" placeholder="URL de Imagen" />
+            <button type="submit">Crear Foro</button>
+        </form>
+
+        <h1>Gastos</h1>
+        <table id="gastosTabla">
+            <thead>
+                <tr>
+                    <th>Nombre Gasto</th>
+                    <th>Fecha Gasto</th>
+                    <th>Cantidad</th>
+                    <th>Total Gastado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="gastosLista"></tbody>
+        </table>
+        <p id="totalGastos"></p>
+        
+
+        <form id="gastosForm" onsubmit="return agregarGasto(event)" class="box">
+            <input type="text" name="nombreGasto" placeholder="Nombre Gasto" required />
+            <input type="date" name="fechaGasto" required />
+            <input type="number" name="cantidad" placeholder="Cantidad" required />
+            <input type="number" name="totalGastado" placeholder="Total gastado" required />
+            <button type="submit">Agregar Gasto</button>
+        </form>
+
+        <h1>Comentarios</h1>
+        <div id="comentarios" class="box"></div>
+
+        <form id="comentariosForm" onsubmit="return agregarComentario(event)" class="box">
+            <input type="text" name="usuario" placeholder="Usuario" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <textarea name="mensaje" placeholder="Comentario" required></textarea>
+            <button type="submit">Agregar Comentario</button>
+        </form>
+
+        <table>
+        <h1>Gráfica de Gastos</h1>
+        <canvas id="gastosChart" width="400" height="200"></canvas>
+        </table>
+        
+        <button onclick="generarExcel()">Generar Excel</button><br><br>
+        <button onclick="generarPDF()">Generar PDF</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

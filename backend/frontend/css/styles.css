@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.box {
+  background: #e2e2e2;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff; /* Color azul para el botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilos para las publicaciones del foro */
+.foro-publicacion {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.foro-publicacion img {
+    max-width: 100%; /* Asegúrate de que la imagen no sobresalga */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen esté en una nueva línea */
+    margin-top: 10px; /* Espacio entre el mensaje y la imagen */
+}
